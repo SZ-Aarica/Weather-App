@@ -1,25 +1,90 @@
 .weatherApp {
-  background-color: aqua;
+  background-color: #fae3d9;
   max-width: 700px;
+  font-family: "El Messiri", sans-serif;
+  font-size: 18px;
+  padding-left: 50px;
+  margin: 0 auto;
 }
 img {
   width: 100px;
 }
+
+form {
+  padding-top: 20px;
+  padding-left: 0px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+input {
+  background-color: #fae3d9;
+  border: 2px solid #ffb6b9;
+  padding: 10px;
+}
+
+.city-name {
+  border: 2px solid #ffb6b9;
+  padding: 10px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  background-color: #fae3d9;
+  transition: all 200ms ease-in-out;
+}
+
+.city-name:hover {
+  background-color: #ffb6b9;
+}
 .first {
-  border: 2px solid black;
+  border: 2px solid #fae3d9;
+  font-size: 22px;
+  text-align: center;
+  margin-left: 28px;
+  margin-right: 20px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background-color: #bbded6;
+  transition: all 200ms ease-in-out;
 }
+.first:hover {
+  background-color: #61c0bf;
+}
+
 .second {
-  border: 2px solid black;
+  border: 2px solid #fae3d9;
+  text-align: center;
+  margin-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #bbded6;
+  transition: all 200ms ease-in-out;
 }
+.second:hover {
+  background-color: #61c0bf;
+}
+
 .next-days {
-  border: 2px solid black;
+  border: 2px solid #fae3d9;
   text-align: center;
   list-style: none;
   padding: 0px;
+  background-color: #bbded6;
+  transition: all 200ms ease-in-out;
 }
+.next-days:hover {
+  background-color: #61c0bf;
+}
+
 .col-3 {
   padding: 0px;
+  margin-top: 20px;
+  margin-left: 25px;
 }
-.line {
-  border-left: 5px solid black;
+button {
+  padding: 9px;
+  border: none;
+  background-color: #bbded6;
+  transition: all 200ms ease-in-out;
+}
+button:hover {
+  background-color: #61c0bf;
 }

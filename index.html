@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -32,10 +38,13 @@
           <div class="col-6">
             <div class="city-name">city name</div>
           </div>
-          <div class="col-6">.</div>
+          <div class="col-6">
+            <button>Current location</button>
+          </div>
         </div>
+
         <div class="row">
-          <div class="col-2">
+          <div class="col-3">
             <div class="first">
               <span id="temperature">33</span>
               °C
@@ -45,14 +54,14 @@
               <span id="time">11:20</span>
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <div class="second">
               <img src="img/sunlight.svg" alt="" />
               <div id="weather">sunny</div>
               <div id="humidity">humidity : 50%</div>
             </div>
           </div>
-          <div class="col-2 last">
+          <div class="col-3 last">
             <ul class="next-days">
               <li class="inner">
                 tue ☀️
@@ -85,5 +94,6 @@
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
