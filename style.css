@@ -1,0 +1,25 @@
+.weatherApp {
+  background-color: aqua;
+  max-width: 700px;
+}
+img {
+  width: 100px;
+}
+.first {
+  border: 2px solid black;
+}
+.second {
+  border: 2px solid black;
+}
+.next-days {
+  border: 2px solid black;
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+}
+.col-3 {
+  padding: 0px;
+}
+.line {
+  border-left: 5px solid black;
+}
