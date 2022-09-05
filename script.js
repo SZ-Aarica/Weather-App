@@ -60,3 +60,33 @@ function showCityName(e) {
 
 let form = document.querySelector(".search-bar");
 form.addEventListener("submit", showCityName);
+//GeoLocation-button-------------------------------------------------------
+
+function getLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let UrlTwo = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(UrlTwo).then(function (response) {
+    description.innerHTML = response.data.weather[0].description;
+    temperature.innerHTML = Math.round(response.data.main.temp);
+    humidity.innerHTML = response.data.main.humidity;
+    let cityName = document.querySelector(".city-name");
+    cityName.innerHTML = response.data.name;
+    if (response.data.weather[0].description.includes("cloud")) {
+      document.getElementById("image").src = "img/cloudy.svg";
+    } else if (response.data.weather[0].description.includes("rain")) {
+      document.getElementById("image").src = "img/rain.svg";
+    } else if (response.data.weather[0].description.includes("snow")) {
+      document.getElementById("image").src = "img/snow.svg";
+    } else {
+      document.getElementById("image").src = "img/sunny.svg";
+    }
+  });
+}
+function displayCurrentTemp() {
+  navigator.geolocation.getCurrentPosition(getLocation);
+}
+
+let button = document.querySelector("#button");
+button.addEventListener("click", displayCurrentTemp);

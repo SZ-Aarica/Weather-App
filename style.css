@@ -1,5 +1,5 @@
 .weatherApp {
-  background-color: #fae3d9;
+  background-color: #20615b;
   max-width: 700px;
   font-family: "El Messiri", sans-serif;
   font-size: 18px;
@@ -18,64 +18,71 @@ form {
   margin-bottom: 10px;
 }
 input {
-  background-color: #fae3d9;
-  border: 2px solid #ffb6b9;
+  background-color: #20615b;
+  border: 2px solid #dece9c;
   padding: 10px;
+}
+::placeholder {
+  color: #dece9c;
+  opacity: 1;
 }
 
 .city-name {
-  border: 2px solid #ffb6b9;
+  border: 2px solid #dece9c;
   padding: 10px;
   margin-left: 40px;
   margin-bottom: 10px;
-  background-color: #fae3d9;
+  background-color: #20615b;
   transition: all 200ms ease-in-out;
-  color: #61c0bf;
+  color: #dece9c;
 }
 
 .city-name:hover {
-  background-color: #ffb6b9;
+  background-color: #a21232;
+  color: #dece9c;
+  border: 2px solid #a21232;
 }
 .first {
-  border: 2px solid #fae3d9;
   font-size: 22px;
   text-align: center;
   margin-left: 28px;
   margin-right: 20px;
   padding-top: 35px;
   padding-bottom: 35px;
-  background-color: #bbded6;
+  background-color: #dece9c;
   transition: all 200ms ease-in-out;
-  color: #ffb6b9;
+  color: #a21232;
 }
 .first:hover {
-  background-color: #61c0bf;
+  background-color: #a21232;
+  color: #dece9c;
 }
 
 .second {
-  border: 2px solid #fae3d9;
   text-align: center;
   margin-right: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #bbded6;
+  background-color: #dece9c;
   transition: all 200ms ease-in-out;
-  color: #ffb6b9;
+  color: #a21232;
 }
 .second:hover {
-  background-color: #61c0bf;
+  background-color: #a21232;
+  color: #dece9c;
 }
 
 .next-days {
-  border: 2px solid #fae3d9;
   text-align: center;
+  color: #a21232;
   list-style: none;
   padding: 0px;
-  background-color: #bbded6;
+  background-color: #dece9c;
   transition: all 200ms ease-in-out;
 }
 .next-days:hover {
-  background-color: #61c0bf;
+  background-color: #a21232;
+  color: #dece9c;
 }
 
 .col-3 {
@@ -86,10 +93,11 @@ input {
 button {
   padding: 9px;
   border: none;
-  background-color: #bbded6;
+  background-color: #dece9c;
   transition: all 200ms ease-in-out;
-  color: #ffb6b9;
+  color: #a21232;
 }
 button:hover {
-  background-color: #61c0bf;
+  background-color: #a21232;
+  color: #dece9c;
 }
