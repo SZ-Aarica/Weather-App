@@ -24,6 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -56,9 +57,10 @@
           </div>
           <div class="col-3">
             <div class="second">
-              <img src="img/sunlight.svg" alt="" />
+              <img src="img/sunlight.svg" alt="" class="img" id="image" />
               <div id="weather">sunny</div>
-              <div id="humidity">humidity : 50%</div>
+              <span>humidity:</span>
+              <span id="humidity">50</span>%
             </div>
           </div>
           <div class="col-3 last">

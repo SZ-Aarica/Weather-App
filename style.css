@@ -30,6 +30,7 @@ input {
   margin-bottom: 10px;
   background-color: #fae3d9;
   transition: all 200ms ease-in-out;
+  color: #61c0bf;
 }
 
 .city-name:hover {
@@ -45,6 +46,7 @@ input {
   padding-bottom: 35px;
   background-color: #bbded6;
   transition: all 200ms ease-in-out;
+  color: #ffb6b9;
 }
 .first:hover {
   background-color: #61c0bf;
@@ -58,6 +60,7 @@ input {
   padding-bottom: 15px;
   background-color: #bbded6;
   transition: all 200ms ease-in-out;
+  color: #ffb6b9;
 }
 .second:hover {
   background-color: #61c0bf;
@@ -85,6 +88,7 @@ button {
   border: none;
   background-color: #bbded6;
   transition: all 200ms ease-in-out;
+  color: #ffb6b9;
 }
 button:hover {
   background-color: #61c0bf;
