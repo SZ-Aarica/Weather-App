@@ -81,6 +81,8 @@ function getLocation(position) {
       document.getElementById("image").src = "img/rain.svg";
     } else if (response.data.weather[0].description.includes("snow")) {
       document.getElementById("image").src = "img/snow.svg";
+    } else if (response.data.weather[0].description.includes("mist")) {
+      document.getElementById("image").src = "img/mist.svg";
     } else {
       document.getElementById("image").src = "img/sunny.svg";
     }
