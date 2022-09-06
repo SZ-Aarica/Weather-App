@@ -101,3 +101,22 @@ button:hover {
   background-color: #a21232;
   color: #dece9c;
 }
+a {
+  font-size: 18px;
+  position: relative;
+  top: -3px;
+  color: #19aeef;
+  font-weight: 200;
+  text-decoration: none;
+  cursor: default;
+}
+
+a:hover {
+  color: #19aeef;
+  text-decoration: none;
+}
+
+.active:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

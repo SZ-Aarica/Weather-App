@@ -34,7 +34,8 @@ function showWeather(city) {
   let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(Url).then(function (response) {
-    temperature.innerHTML = Math.round(response.data.main.temp);
+    celciusElement = Math.round(response.data.main.temp);
+    temperature.innerHTML = celciusElement;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
 
@@ -53,6 +54,7 @@ function showWeather(city) {
 function showCityName(e) {
   e.preventDefault();
   let input = document.querySelector("#search");
+  farenheitLink.classList.add("active");
   let cityName = document.querySelector(".city-name");
   cityName.innerHTML = input.value;
   showWeather(input.value);
@@ -90,3 +92,19 @@ function displayCurrentTemp() {
 
 let button = document.querySelector("#button");
 button.addEventListener("click", displayCurrentTemp);
+//---------------------------------------------------
+
+let celciusElement = null;
+let celciusLink = document.querySelector("#celcius");
+let farenheitLink = document.querySelector("#farenheit");
+farenheitLink.addEventListener("click", function (event) {
+  temperature.innerHTML = Math.round(celciusElement * 9.5 + 32);
+  farenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+});
+celciusLink.addEventListener("click", function (event) {
+  temperature.innerHTML = celciusElement;
+
+  farenheitLink.classList.add("active");
+  celciusLink.classList.remove("active");
+});
