@@ -120,3 +120,6 @@ a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+.forcast-image {
+  width: 34px;
+}

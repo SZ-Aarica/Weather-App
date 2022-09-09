@@ -110,3 +110,28 @@ celciusLink.addEventListener("click", function (event) {
   farenheitLink.classList.add("active");
   celciusLink.classList.remove("active");
 });
+
+//---------------------------------------------------------
+
+let forcastDays = ["wednesday", "thursday", "friday", "saturday", "sunday"];
+let forcastElement = document.querySelector(".next-days");
+let forcast = "";
+forcastDays.forEach(function (day) {
+  forcast =
+    forcast +
+    `     
+    
+                <li>
+                  ${day}
+                  <img
+                    class="forcast-image"
+                    src="img/forcastIcon.svg"
+                    alt=""
+                  />
+                  <br />
+                  <span class="max-forcast-temp">35</span>/
+                  <span class="min-forcast-temp">36</span>
+                </li>
+              `;
+  forcastElement.innerHTML = forcast;
+});
