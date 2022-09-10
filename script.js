@@ -30,9 +30,51 @@ let temperature = document.querySelector("#temperature");
 let apiKey = "74e718c96dc64467c77303080c47c11d";
 let humidity = document.querySelector("#humidity");
 
+function getCoordination(coordinates) {
+  let oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=5f472b7acba333cd8a035ea85a0d4d4c&units=metric`;
+  axios.get(oneCallApi).then(function (response) {
+    let forcastData = response.data.daily;
+    let forcastElement = document.querySelector(".next-days");
+    let forcast = "";
+
+    function correctDay(dt) {
+      let date = new Date(dt * 1000);
+      let day = date.getDay();
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      return days[day];
+    }
+    forcastData.forEach(function (data, index) {
+      if (index < 5) {
+        forcast =
+          forcast +
+          `     
+                <li>
+                  ${correctDay(data.dt)}
+                  <img
+                    class="forcast-image"
+                    src="http://openweathermap.org/img/wn/${
+                      data.weather[0].icon
+                    }@2x.png"
+                    alt=""
+                  />
+                  <br />
+                  <span class="max-forcast-temp">${Math.round(
+                    data.temp.min
+                  )}</span>/
+                  <span class="min-forcast-temp">${Math.round(
+                    data.temp.max
+                  )}</span>
+                </li>
+              `;
+        forcastElement.innerHTML = forcast;
+      }
+    });
+  });
+}
+
 function showWeather(city) {
   let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
   axios.get(Url).then(function (response) {
     celciusElement = Math.round(response.data.main.temp);
     temperature.innerHTML = celciusElement;
@@ -48,6 +90,8 @@ function showWeather(city) {
     } else {
       document.getElementById("image").src = "img/sunny.svg";
     }
+
+    getCoordination(response.data.coord);
   });
 }
 
@@ -86,6 +130,7 @@ function getLocation(position) {
     } else {
       document.getElementById("image").src = "img/sunny.svg";
     }
+    getCoordination(response.data.coord);
   });
 }
 function displayCurrentTemp() {
@@ -112,26 +157,3 @@ celciusLink.addEventListener("click", function (event) {
 });
 
 //---------------------------------------------------------
-
-let forcastDays = ["wednesday", "thursday", "friday", "saturday", "sunday"];
-let forcastElement = document.querySelector(".next-days");
-let forcast = "";
-forcastDays.forEach(function (day) {
-  forcast =
-    forcast +
-    `     
-    
-                <li>
-                  ${day}
-                  <img
-                    class="forcast-image"
-                    src="img/forcastIcon.svg"
-                    alt=""
-                  />
-                  <br />
-                  <span class="max-forcast-temp">35</span>/
-                  <span class="min-forcast-temp">36</span>
-                </li>
-              `;
-  forcastElement.innerHTML = forcast;
-});
