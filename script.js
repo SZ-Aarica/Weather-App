@@ -81,7 +81,7 @@ function showWeather(city) {
     temperature.innerHTML = celciusElement;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
-    wind.innerHTML = response.data.wind.speed;
+    wind.innerHTML = Math.round(response.data.wind.speed);
 
     if (response.data.weather[0].description.includes("cloud")) {
       document.getElementById("image").src = "img/cloudy.svg";
@@ -100,7 +100,7 @@ function showWeather(city) {
 function showCityName(e) {
   e.preventDefault();
   let input = document.querySelector("#search");
-  farenheitLink.classList.add("active");
+
   let cityName = document.querySelector(".city-name");
   cityName.innerHTML = input.value;
   showWeather(input.value);
@@ -118,6 +118,7 @@ function getLocation(position) {
   axios.get(UrlTwo).then(function (response) {
     description.innerHTML = response.data.weather[0].description;
     temperature.innerHTML = Math.round(response.data.main.temp);
+    wind.innerHTML = Math.round(response.data.wind.speed);
     humidity.innerHTML = response.data.main.humidity;
     let cityName = document.querySelector(".city-name");
     cityName.innerHTML = response.data.name;
@@ -142,20 +143,5 @@ function displayCurrentTemp() {
 let button = document.querySelector("#button");
 button.addEventListener("click", displayCurrentTemp);
 //---------------------------------------------------
-
-let celciusElement = null;
-let celciusLink = document.querySelector("#celcius");
-let farenheitLink = document.querySelector("#farenheit");
-farenheitLink.addEventListener("click", function (event) {
-  temperature.innerHTML = Math.round(celciusElement * 9.5 + 32);
-  farenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-});
-celciusLink.addEventListener("click", function (event) {
-  temperature.innerHTML = celciusElement;
-
-  farenheitLink.classList.add("active");
-  celciusLink.classList.remove("active");
-});
 
 //---------------------------------------------------------

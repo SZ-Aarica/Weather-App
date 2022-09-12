@@ -126,3 +126,9 @@ a:hover {
 input::placeholder {
   color: #dece9c;
 }
+.gitHubLink {
+  color: #20615b;
+  font-family: "El Messiri", sans-serif;
+
+}
+.gitHubLink
