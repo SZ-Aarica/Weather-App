@@ -126,9 +126,21 @@ a:hover {
 input::placeholder {
   color: #dece9c;
 }
-.gitHubLink {
-  color: #20615b;
+.gitHubLink,
+footer {
+  display: inline;
+  color: #a21232;
   font-family: "El Messiri", sans-serif;
-
+  font-size: 18px;
+  margin-left: 150px;
 }
-.gitHubLink
+
+.gitHubLink:hover {
+  text-decoration: underline;
+  color: #a21232;
+  cursor: pointer;
+}
+.creator {
+  color: #20615b;
+  font-size: 19px;
+}
