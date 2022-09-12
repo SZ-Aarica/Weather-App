@@ -123,3 +123,6 @@ a:hover {
 .forcast-image {
   width: 34px;
 }
+input::placeholder {
+  color: #dece9c;
+}

@@ -29,6 +29,7 @@ let description = document.querySelector("#weather");
 let temperature = document.querySelector("#temperature");
 let apiKey = "74e718c96dc64467c77303080c47c11d";
 let humidity = document.querySelector("#humidity");
+let windSpeed = document.querySelector("#wind");
 
 function getCoordination(coordinates) {
   let oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=5f472b7acba333cd8a035ea85a0d4d4c&units=metric`;
@@ -80,6 +81,7 @@ function showWeather(city) {
     temperature.innerHTML = celciusElement;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
+    wind.innerHTML = response.data.wind.speed;
 
     if (response.data.weather[0].description.includes("cloud")) {
       document.getElementById("image").src = "img/cloudy.svg";
